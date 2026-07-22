@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VTPass Redesign - Easy Payment Solution</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Sticky Double Navigation Bar -->
+  <header class="main-header">
+    <!-- Top Navigation Bar -->
+    <div class="top-nav-bar">
+      <div class="nav-container">
+        <a href="#" class="logo-link">
+          <img src="assets/vtpass_logo.png" alt="VTPass Logo" class="brand-logo">
+        </a>
+        <nav class="nav-links">
+          <a href="#services" class="nav-link">Airtime</a>
+          <a href="#services" class="nav-link">Data</a>
+          <a href="#services" class="nav-link">TV</a>
+          <a href="#services" class="nav-link">Electricity</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="btn-login" id="btn-login-header">Login</button>
+          <button class="btn-register" id="btn-register-header">Register</button>
+          <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sub-navigation Bar -->
+    <div class="sub-nav-bar">
+      <div class="nav-container">
+        <div class="sub-nav-links">
+          <a href="#" class="sub-nav-link active" data-tab="payment">
+            <i class="fa-solid fa-credit-card"></i> Make Payment
+          </a>
+          <a href="#agent" class="sub-nav-link" data-tab="agent">
+            <i class="fa-solid fa-briefcase"></i> Become an Agent
+          </a>
+          <a href="#agent" class="sub-nav-link" data-tab="earning">
+            <i class="fa-solid fa-chart-line"></i> Start Earning
+          </a>
+          <div class="dropdown-wrapper">
+            <a href="#" class="sub-nav-link dropdown-toggle" id="toolsDropdownBtn">
+              <i class="fa-solid fa-toolbox"></i> Quick Tools <i class="fa-solid fa-chevron-down chevron-icon"></i>
+            </a>
+            <div class="dropdown-menu" id="quickToolsMenu">
+              <a href="#calculator-section" class="dropdown-item"><i class="fa-solid fa-calculator"></i> Payment Calculator</a>
+              <a href="#api" class="dropdown-item"><i class="fa-solid fa-code"></i> Developer API</a>
+              <a href="#" class="dropdown-item" id="btn-verify-merchant"><i class="fa-solid fa-shield-halved"></i> Verify Merchant</a>
+            </div>
+          </div>
+        </div>
+        <div class="sub-nav-right">
+          <a href="#" class="news-link" id="whatsNewLink">
+            See What's New <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileClose">&times;</button>
+    <div class="mobile-nav-links">
+      <a href="#services" class="mobile-nav-link-item">Airtime</a>
+      <a href="#services" class="mobile-nav-link-item">Data</a>
+      <a href="#services" class="mobile-nav-link-item">TV</a>
+      <a href="#services" class="mobile-nav-link-item">Electricity</a>
+      <hr>
+      <a href="#agent" class="mobile-nav-link-item">Become an Agent</a>
+      <a href="#api" class="mobile-nav-link-item">Developer API</a>
+      <hr>
+      <button class="btn-login w-100 mb-10" id="btn-login-mobile">Login</button>
+      <button class="btn-register w-100" id="btn-register-mobile">Register</button>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="badge-trusted">
+          <span class="badge-icon"><i class="fa-solid fa-shield-check"></i></span>
+          <span class="badge-text">Trusted by 2M+ Users</span>
+        </div>
+        <h1 class="hero-title">VTPass Easy Payment Solution</h1>
+        <p class="hero-subtitle">
+          Top up phone airtime or internet data. Pay electricity bills; renew TV subscriptions. Buy quality insurance covers and do more from the comfort of your home.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-primary" id="heroGetStartedBtn">
+            Get Started <i class="fa-solid fa-arrow-right-long button-icon"></i>
+          </button>
+          <a href="#services" class="btn-secondary">Learn More</a>
+        </div>
+        <div class="social-proof">
+          <div class="avatar-stack">
+            <img src="assets/avatar1.png" alt="User 1" class="avatar-img">
+            <img src="assets/avatar2.png" alt="User 2" class="avatar-img">
+            <img src="assets/avatar3.png" alt="User 3" class="avatar-img">
+          </div>
+          <div class="rating-info">
+            <div class="rating-stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <p class="rating-text">4.8/5 from over 10k reviews</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-graphic-wrapper">
+        <div class="orange-glow"></div>
+        <img src="assets/hero_graphic.png" alt="VTPass Hero App Mockup" class="hero-graphic">
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Bill Payment Simulator Widget -->
+  <section class="calculator-section" id="calculator-section">
+    <div class="container">
+      <div class="calc-card">
+        <div class="calc-header">
+          <h2><i class="fa-solid fa-circle-nodes icon-accent"></i> Quick Bill Payment Calculator</h2>
+          <p>Simulate a secure transaction and estimate fees in real-time</p>
+        </div>
+        <div class="calc-body">
+          <div class="calc-tabs">
+            <button class="calc-tab active" data-service="airtime"><i class="fa-solid fa-phone"></i> Airtime</button>
+            <button class="calc-tab" data-service="data"><i class="fa-solid fa-wifi"></i> Data</button>
+            <button class="calc-tab" data-service="tv"><i class="fa-solid fa-tv"></i> TV Subscription</button>
+            <button class="calc-tab" data-service="electricity"><i class="fa-solid fa-bolt"></i> Electricity</button>
+          </div>
+
+          <div class="calc-form">
+            <!-- Service Provider Selector -->
+            <div class="form-group">
+              <label for="providerSelect">Select Service Provider</label>
+              <div class="select-wrapper">
+                <select id="providerSelect">
+                  <!-- Dynamic Options Injected by JS -->
+                </select>
+              </div>
+            </div>
+
+            <!-- Package Selector (For TV / Data) -->
+            <div class="form-group d-none" id="packageGroup">
+              <label for="packageSelect">Select Package / Bundle</label>
+              <div class="select-wrapper">
+                <select id="packageSelect">
+                  <!-- Dynamic Options Injected by JS -->
+                </select>
+              </div>
+            </div>
+
+            <!-- Input Fields -->
+            <div class="form-grid">
+              <div class="form-group">
+                <label id="inputLabel" for="numberInput">Phone Number</label>
+                <input type="text" id="numberInput" placeholder="Enter 11-digit mobile number">
+              </div>
+              <div class="form-group" id="amountGroup">
+                <label for="amountInput">Amount (&#8358;)</label>
+                <input type="number" id="amountInput" placeholder="Enter amount" min="50">
+              </div>
+            </div>
+
+            <!-- Fee / Summary Panel -->
+            <div class="summary-panel">
+              <div class="summary-row">
+                <span>Subtotal:</span>
+                <span id="summarySubtotal">&#8358;0.00</span>
+              </div>
+              <div class="summary-row">
+                <span>Transaction Fee:</span>
+                <span id="summaryFee">&#8358;0.00</span>
+              </div>
+              <hr>
+              <div class="summary-row total">
+                <span>Total Amount:</span>
+                <span id="summaryTotal">&#8358;0.00</span>
+              </div>
+            </div>
+
+            <button class="btn-primary w-100" id="btnSimulatePayment">
+              Proceed to Secure Payment <i class="fa-solid fa-lock"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid (Every Payment Made Simple) -->
+  <section class="services-section" id="services">
+    <div class="container services-grid">
+      <div class="services-graphic-wrapper">
+        <div class="dark-orange-glow"></div>
+        <img src="assets/services_graphic.png" alt="Payment Services Graphic" class="services-graphic">
+      </div>
+      <div class="services-content">
+        <span class="section-tag text-red">EFFICIENCY AND SPEED</span>
+        <h2 class="section-title text-dark">Every Payment Made Simple.</h2>
+        <div class="services-list">
+          <!-- Airtime Row -->
+          <div class="service-row-card">
+            <div class="service-icon-box">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="service-details">
+              <h3>Airtime & Internet Data</h3>
+              <p>Top up your mobile or buy data bundles for all major networks instantly. <a href="#calculator-section" class="service-action-link">Buy Now <i class="fa-solid fa-arrow-right"></i></a></p>
+            </div>
+          </div>
+          <!-- TV Row -->
+          <div class="service-row-card">
+            <div class="service-icon-box">
+              <i class="fa-solid fa-tv"></i>
+            </div>
+            <div class="service-details">
+              <h3>TV Subscriptions</h3>
+              <p>Renew your DSTV, GOTV, and StarTimes plans without missing a moment. <a href="#calculator-section" class="service-action-link">Renew Now <i class="fa-solid fa-arrow-right"></i></a></p>
+            </div>
+          </div>
+          <!-- Electricity Row -->
+          <div class="service-row-card">
+            <div class="service-icon-box">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <div class="service-details">
+              <h3>Electricity Bills</h3>
+              <p>Pay prepaid and postpaid electricity bills across Nigeria in seconds. <a href="#calculator-section" class="service-action-link">Pay Bill <i class="fa-solid fa-arrow-right"></i></a></p>
+            </div>
+          </div>
+        </div>
+        <button class="btn-primary mt-20" id="discoverMoreServicesBtn">Discover More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Become an Agent Section -->
+  <section class="agent-section" id="agent">
+    <div class="container agent-grid">
+      <div class="agent-graphic-wrapper">
+        <img src="assets/agent_graphic.png" alt="Become an Agent" class="agent-graphic">
+      </div>
+      <div class="agent-content">
+        <h2 class="section-title text-white">Become An Agent</h2>
+        <p class="section-desc text-light">
+          Join our network of outstanding entrepreneurs partnering with VTpass.com. Bring easy-payments closer to your community and earn mouth-watering commissions.
+        </p>
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <span class="benefit-icon"><i class="fa-solid fa-percent"></i></span>
+            <div class="benefit-details">
+              <h4>Earn Huge Commissions</h4>
+              <p>Best rates in the industry.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon"><i class="fa-solid fa-money-bill-transfer"></i></span>
+            <div class="benefit-details">
+              <h4>Instant Withdrawal</h4>
+              <p>Access your funds 24/7.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon"><i class="fa-solid fa-chart-line"></i></span>
+            <div class="benefit-details">
+              <h4>Business Growth</h4>
+              <p>Free digital resources.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon"><i class="fa-solid fa-shield-check"></i></span>
+            <div class="benefit-details">
+              <h4>Safe & Secured</h4>
+              <p>100% wallet protection.</p>
+            </div>
+          </div>
+        </div>
+        <div class="agent-actions">
+          <button class="btn-primary" id="agentStartBtn">Start Now</button>
+          <button class="btn-text" id="agentLearnMoreBtn">Discover More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- API Integration Section -->
+  <section class="api-section" id="api">
+    <div class="container api-grid">
+      <div class="api-content">
+        <h2 class="section-title text-dark">Integrate Our API</h2>
+        <p class="section-desc text-dark-sub">
+          Are you a developer building the next Fintech app? Integrate our well-documented API that lets you build your own payment platform.
+        </p>
+        <div class="api-features">
+          <div class="api-feature-card">
+            <span class="feature-icon"><i class="fa-solid fa-book-open-reader"></i></span>
+            <div class="feature-details">
+              <h4>Concise Documentation</h4>
+              <p>Well-defined articulation and easy integration process.</p>
+            </div>
+          </div>
+          <div class="api-feature-card">
+            <span class="feature-icon"><i class="fa-solid fa-headset"></i></span>
+            <div class="feature-details">
+              <h4>Awesome Tech Support</h4>
+              <p>Expert assistance at every step of your development.</p>
+            </div>
+          </div>
+          <div class="api-feature-card">
+            <span class="feature-icon"><i class="fa-solid fa-circle-check"></i></span>
+            <div class="feature-details">
+              <h4>99.9% Uptime</h4>
+              <p>Reliable service that grows with your imagination.</p>
+            </div>
+          </div>
+        </div>
+        <button class="btn-primary mt-20" id="apiDocsBtn">API Documentation</button>
+      </div>
+      <div class="api-graphic-wrapper">
+        <img src="assets/api_graphic.png" alt="Developer API Interface" class="api-graphic">
+      </div>
+    </div>
+  </section>
+
+  <!-- Why VTPass Section -->
+  <section class="why-section">
+    <div class="container">
+      <div class="why-header">
+        <h2 class="section-title text-navy text-center">Why VTPass</h2>
+        <p class="section-desc text-dark-sub text-center">
+          Nigeria's top payment platform providing fast, easy online payment solutions for millions. We ensure day-to-day payments are stress-free.
+        </p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon-box bg-navy">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <h3>24/7 Support</h3>
+          <p>Our trained agents are always available to help you resolve issues instantly.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon-box bg-orange">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <h3>Fast Delivery</h3>
+          <p>Value delivered for every transaction on-time, every time, without delays.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon-box bg-navy">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3>Safe Payments</h3>
+          <p>100% secured payments via card, bank transfer or wallet.</p>
+        </div>
+      </div>
+      <div class="text-center mt-40">
+        <button class="btn-primary" id="whyDiscoverBtn">Discover More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <!-- Brand Column -->
+      <div class="footer-col brand-col">
+        <h3 class="footer-logo">VTPass</h3>
+        <p class="footer-about">
+          Your trusted partner for utility payments. We bridge the gap between people and the services they need every day.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Links Column 1 -->
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul class="footer-links">
+          <li><a href="#services">Bill Payments</a></li>
+          <li><a href="#services">Airtime & Data</a></li>
+          <li><a href="#">Insurance</a></li>
+          <li><a href="#">Education</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 2 -->
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul class="footer-links">
+          <li><a href="#api">Merchant API</a></li>
+          <li><a href="#">Help Center</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 3 -->
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul class="footer-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <!-- Links Column 4 (Support Widget) -->
+      <div class="footer-col support-col">
+        <h4>Support</h4>
+        <div class="support-widget">
+          <p>Need any help?</p>
+          <button class="btn-primary btn-sm" id="btnContactUsFooter">Contact Us</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="container">
+        <hr class="footer-divider">
+        <p class="copyright-text">
+          &copy; 2026 VTPass. All rights reserved. Your trusted partner for utility payments.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL: Authentication Sim (Login / Register) -->
+  <div class="modal-overlay" id="authModal">
+    <div class="modal-card">
+      <button class="modal-close" id="authClose">&times;</button>
+      <div class="modal-header">
+        <h3 id="authTitle">Login to VTPass</h3>
+        <p id="authSubtitle">Access your payment wallet and history</p>
+      </div>
+      <div class="modal-body">
+        <form id="authForm" onsubmit="event.preventDefault();">
+          <div class="form-group" id="nameGroup" style="display: none;">
+            <label for="authName">Full Name</label>
+            <input type="text" id="authName" placeholder="Enter your full name">
+          </div>
+          <div class="form-group">
+            <label for="authEmail">Email Address</label>
+            <input type="email" id="authEmail" placeholder="name@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="authPassword">Password</label>
+            <input type="password" id="authPassword" placeholder="••••••••" required>
+          </div>
+          <button class="btn-primary w-100" id="btnAuthSubmit">Sign In</button>
+        </form>
+        <p class="auth-toggle-text">
+          <span id="authToggleTextPrefix">Don't have an account?</span>
+          <a href="#" id="authToggleBtn">Register</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Payment Simulation Progress / Receipt -->
+  <div class="modal-overlay" id="paymentModal">
+    <div class="modal-card payment-status-card">
+      <div class="modal-body text-center" id="paymentModalBody">
+        <!-- Spinner State -->
+        <div class="spinner-state" id="paymentSpinnerState">
+          <div class="spinner"></div>
+          <h3>Processing Payment</h3>
+          <p>Please do not refresh the page, establishing secure channel...</p>
+        </div>
+
+        <!-- Success Receipt State -->
+        <div class="success-state d-none" id="paymentSuccessState">
+          <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <h3 class="text-green">Transaction Successful!</h3>
+          <p>Your payment has been processed and value delivered.</p>
+          
+          <div class="receipt-box">
+            <h4>Payment Receipt</h4>
+            <hr>
+            <div class="receipt-row">
+              <span>Service Type:</span>
+              <strong id="recService">Airtime</strong>
+            </div>
+            <div class="receipt-row">
+              <span>Provider:</span>
+              <strong id="recProvider">MTN</strong>
+            </div>
+            <div class="receipt-row">
+              <span>Reference Number:</span>
+              <strong id="recRef">VT-837482910-X</strong>
+            </div>
+            <div class="receipt-row">
+              <span>Recipient:</span>
+              <strong id="recTarget">08031234567</strong>
+            </div>
+            <hr>
+            <div class="receipt-row receipt-total">
+              <span>Amount Paid:</span>
+              <strong id="recTotal">&#8358;0.00</strong>
+            </div>
+          </div>
+
+          <button class="btn-primary w-100 mt-20" id="btnReceiptClose">Close & Download Receipt</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: General Contact / Info Modal -->
+  <div class="modal-overlay" id="infoModal">
+    <div class="modal-card">
+      <button class="modal-close" id="infoClose">&times;</button>
+      <div class="modal-header">
+        <h3 id="infoTitle">Contact Support</h3>
+        <p id="infoSubtitle">We are available 24/7 to resolve issues</p>
+      </div>
+      <div class="modal-body">
+        <div class="contact-details">
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <strong>Email Support</strong>
+              <p>support@vtpass.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <strong>Phone Helpline</strong>
+              <p>+234 1 234 5678, +234 81 2345 6789</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa-brands fa-whatsapp"></i>
+            <div>
+              <strong>WhatsApp Support</strong>
+              <p>+234 815 123 4567</p>
+            </div>
+          </div>
+        </div>
+        <hr class="mt-20 mb-20">
+        <form onsubmit="event.preventDefault(); alert('Message sent! Support will contact you shortly.'); document.getElementById('infoModal').classList.remove('active');">
+          <div class="form-group">
+            <label for="contactMsg">Leave a Message</label>
+            <textarea id="contactMsg" rows="3" placeholder="Explain your inquiry or issue..." required></textarea>
+          </div>
+          <button class="btn-primary w-100">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toast">
+    <i class="fa-solid fa-circle-info toast-icon"></i>
+    <span class="toast-message" id="toastMessage">Welcome to VTPass Redesign!</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
