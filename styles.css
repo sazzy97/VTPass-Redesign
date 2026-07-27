@@ -98,6 +98,8 @@ button, input, select, textarea {
 .text-white { color: var(--bg-white); }
 .text-light { color: var(--text-light); }
 .text-navy { color: var(--color-navy); }
+.text-orange { color: var(--color-orange); }
+.text-blue { color: var(--color-blue); }
 .text-dark { color: var(--text-dark); }
 .text-dark-sub { color: var(--text-dark-sub); }
 
@@ -114,7 +116,7 @@ button, input, select, textarea {
   align-items: center;
   justify-content: center;
   background-color: var(--color-orange);
-  color: var(--bg-white);
+  color: var(--color-blue);
   font-weight: 600;
   font-size: 15px;
   padding: 12px 28px;
@@ -156,20 +158,37 @@ button, input, select, textarea {
   transform: translateY(-2px);
 }
 
+.btn-blue {
+  background-color: var(--color-blue) !important;
+  color: var(--bg-white) !important;
+}
+
+.btn-blue:hover {
+  background-color: var(--color-navy) !important;
+  color: var(--bg-white) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
 .btn-text {
   background: none;
-  border: none;
+  border: 2px solid var(--bg-white);
   color: var(--bg-white);
   font-weight: 600;
   font-size: 15px;
   cursor: pointer;
-  transition: var(--transition-fast);
-  padding: 10px 20px;
+  transition: var(--transition-normal);
+  padding: 12px 28px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-text:hover {
-  opacity: 0.8;
-  transform: translateX(3px);
+  background-color: var(--bg-white);
+  color: var(--color-teal);
+  transform: translateY(-2px);
+  opacity: 1;
 }
 
 .btn-login {
@@ -190,7 +209,7 @@ button, input, select, textarea {
 
 .btn-register {
   background-color: var(--color-orange);
-  color: var(--color-navy);
+  color: var(--color-blue);
   font-weight: 600;
   font-size: 15px;
   padding: 10px 24px;
@@ -202,7 +221,7 @@ button, input, select, textarea {
 
 .btn-register:hover {
   background-color: var(--color-orange-hover);
-  color: var(--bg-white);
+  color: var(--color-blue);
   transform: scale(1.03);
 }
 
