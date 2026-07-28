@@ -1146,6 +1146,13 @@ select:focus, input:focus {
   color: #C8E6FF;
 }
 
+.footer-logo-img {
+  height: 36px;
+  margin-bottom: 20px;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
 .footer-about {
   font-size: 16px;
   color: var(--text-light);
@@ -1728,7 +1735,6 @@ body.dark-theme .receipt-box h4 {
 }
 
 body.dark-theme p,
-body.dark-theme span,
 body.dark-theme label,
 body.dark-theme .service-details p,
 body.dark-theme .receipt-row span {
@@ -1809,5 +1815,49 @@ body.dark-theme .footer-logo {
 
 /* Logo contrast filter */
 body.dark-theme .brand-logo {
-  filter: brightness(1.2) contrast(1.1);
+  filter: brightness(0) invert(1);
+}
+
+/* Dark Theme Overrides & Corrections */
+body.dark-theme #heroGetStartedBtn {
+  background-color: #ffffff !important;
+  color: #002539 !important;
+}
+body.dark-theme #heroGetStartedBtn:hover {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  color: #002539 !important;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2) !important;
+}
+
+body.dark-theme .btn-primary,
+body.dark-theme .btn-register {
+  color: #002539 !important;
+}
+body.dark-theme .btn-primary:hover,
+body.dark-theme .btn-register:hover {
+  color: #002539 !important;
+}
+
+body.dark-theme .services-content .text-blue,
+body.dark-theme .api-content .text-blue,
+body.dark-theme .why-header .text-blue {
+  color: var(--color-orange) !important;
+}
+
+body.dark-theme #agentLearnMoreBtn {
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+  background: transparent !important;
+}
+body.dark-theme #agentLearnMoreBtn:hover {
+  background-color: #ffffff !important;
+  color: var(--color-teal) !important;
+}
+
+body.dark-theme .why-icon-box.bg-navy {
+  background-color: #1A597B !important;
+  color: #ffffff !important;
+}
+body.dark-theme .why-icon-box.bg-navy i {
+  color: #ffffff !important;
 }
