@@ -1621,3 +1621,193 @@ textarea:focus {
     padding: 24px;
   }
 }
+
+/* ==========================================
+   SLEEK DARK THEME
+   ========================================== */
+
+body.dark-theme {
+  /* Theme variable overrides */
+  --bg-white: #0c1b25;
+  --bg-light: #09141d;
+  --border-light: rgba(255, 255, 255, 0.08);
+  --text-dark: #f0f4f8;
+  --text-dark-sub: #a1b0c0;
+  --text-muted: #8fa0b0;
+  --color-blue: #5ea2d8;
+  --color-sky-bg: #050e14;
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* Page Background Force */
+body.dark-theme,
+body.dark-theme .hero-section,
+body.dark-theme .services-section,
+body.dark-theme .api-section {
+  background-color: #050e14 !important;
+  color: #f0f4f8 !important;
+}
+
+/* Header Dark Mode overrides */
+body.dark-theme .main-header,
+body.dark-theme .top-nav-bar,
+body.dark-theme .sub-nav-bar {
+  background-color: #050e14 !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+body.dark-theme .sub-nav-link.active {
+  border-bottom-color: #5ea2d8 !important;
+  color: #5ea2d8 !important;
+}
+
+/* Theme Toggle Button styling */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: var(--transition-normal);
+  margin-right: 16px;
+}
+.theme-toggle:hover {
+  background-color: var(--color-light-blue);
+  color: var(--color-blue);
+  transform: rotate(15deg);
+}
+.theme-toggle .sun-icon {
+  display: none;
+}
+.theme-toggle .moon-icon {
+  display: block;
+  font-size: 18px;
+}
+body.dark-theme .theme-toggle .sun-icon {
+  display: block;
+  font-size: 18px;
+  color: #ffb74d;
+}
+body.dark-theme .theme-toggle .moon-icon {
+  display: none;
+}
+body.dark-theme .theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.mobile-theme-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark-sub);
+}
+body.dark-theme .mobile-theme-row {
+  color: var(--text-dark);
+}
+
+/* Text elements dark mode overrides */
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme .text-navy,
+body.dark-theme .section-title,
+body.dark-theme .why-card h3,
+body.dark-theme .modal-header h3,
+body.dark-theme .service-details h3,
+body.dark-theme .receipt-box h4 {
+  color: #f0f4f8 !important;
+}
+
+body.dark-theme p,
+body.dark-theme span,
+body.dark-theme label,
+body.dark-theme .service-details p,
+body.dark-theme .receipt-row span {
+  color: #a1b0c0 !important;
+}
+
+/* Strong highlights */
+body.dark-theme strong,
+body.dark-theme .receipt-row strong {
+  color: #f0f4f8 !important;
+}
+
+/* Services card hover override */
+body.dark-theme .service-row-card:hover {
+  background-color: #0e2230 !important;
+  border-color: #5ea2d8 !important;
+}
+
+/* API feature card overrides */
+body.dark-theme .api-feature-card {
+  background-color: #09141d !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+body.dark-theme .api-feature-card:hover {
+  background-color: #0c1b25 !important;
+  border-color: #5ea2d8 !important;
+}
+
+/* Why cards overrides */
+body.dark-theme .why-card {
+  background-color: #0c1b25 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Calculator specific overrides */
+body.dark-theme .calc-card {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+body.dark-theme .calc-tab {
+  color: #8fa0b0 !important;
+}
+body.dark-theme .calc-tab:hover,
+body.dark-theme .calc-tab.active {
+  color: #5ea2d8 !important;
+  border-bottom-color: #5ea2d8 !important;
+}
+body.dark-theme .summary-panel {
+  background-color: #09141d !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+body.dark-theme .summary-row.total {
+  color: #f0f4f8 !important;
+}
+
+/* Input boxes overrides */
+body.dark-theme select,
+body.dark-theme input,
+body.dark-theme textarea {
+  background-color: #081119 !important;
+  color: #f0f4f8 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+body.dark-theme select:focus,
+body.dark-theme input:focus,
+body.dark-theme textarea:focus {
+  border-color: #5ea2d8 !important;
+  box-shadow: 0 0 0 3px rgba(94, 162, 216, 0.15) !important;
+}
+
+/* Footer widget box dark mode */
+body.dark-theme .support-widget {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+body.dark-theme .footer-logo {
+  color: #5ea2d8 !important;
+}
+
+/* Logo contrast filter */
+body.dark-theme .brand-logo {
+  filter: brightness(1.2) contrast(1.1);
+}

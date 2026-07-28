@@ -157,6 +157,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const toast = document.getElementById('toast');
   const toastMessage = document.getElementById('toastMessage');
 
+  // --- Sleek Dark Theme Logic ---
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  const mobileThemeToggleBtn = document.getElementById('mobileThemeToggleBtn');
+
+  // Check for saved theme preference, fallback to system preference
+  const savedTheme = localStorage.getItem('theme');
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+  if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+    document.body.classList.add('dark-theme');
+  } else {
+    document.body.classList.remove('dark-theme');
+  }
+
+  function toggleTheme() {
+    const isDark = document.body.classList.toggle('dark-theme');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    showToast(`${isDark ? 'Dark' : 'Light'} theme enabled!`, 'success');
+  }
+
+  if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
+  if (mobileThemeToggleBtn) mobileThemeToggleBtn.addEventListener('click', toggleTheme);
+
   // --- Initialize Calculator ---
   updateCalculatorUI();
 
