@@ -116,7 +116,7 @@ button, input, select, textarea {
   align-items: center;
   justify-content: center;
   background-color: var(--color-orange);
-  color: var(--color-blue);
+  color: var(--color-navy);
   font-weight: 600;
   font-size: 15px;
   height: 48px;
@@ -216,7 +216,7 @@ button, input, select, textarea {
 
 .btn-register {
   background-color: var(--color-orange);
-  color: var(--color-blue);
+  color: var(--color-navy);
   font-weight: 600;
   font-size: 15px;
   height: 48px;
@@ -232,7 +232,7 @@ button, input, select, textarea {
 
 .btn-register:hover {
   background-color: var(--color-orange-hover);
-  color: var(--color-blue);
+  color: var(--color-navy);
   transform: scale(1.03);
 }
 
@@ -1148,6 +1148,8 @@ select:focus, input:focus {
 
 .footer-logo-img {
   height: 36px;
+  width: auto;
+  align-self: flex-start;
   margin-bottom: 20px;
   display: block;
   filter: brightness(0) invert(1);
